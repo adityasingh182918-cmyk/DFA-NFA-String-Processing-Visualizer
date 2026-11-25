@@ -2,6 +2,8 @@
 
 A local Automata Theory learning application. Enter a string, construct a DFA or NFA for its exact-string language, and step through the computation in an SVG diagram.
 
+> DFA and NFA are formal computational models. This application does not use trained AI or machine-learning models.
+
 ## Problem statement and objective
 
 The application demonstrates how a finite automaton processes symbols and decides whether an input belongs to a language. It analyzes a supplied string, generates an automaton from a documented construction rule, simulates the input in Python, and presents the returned model and computation history in the browser.
@@ -95,5 +97,15 @@ python -m pytest backend/tests -q
 
 - The exact-string rule constructs a machine from the same string it processes; a separate machine-definition input would be useful for arbitrary trial strings.
 - The NFA example supports symbol transitions but not epsilon transitions.
+- The built-in NFA labelled “contains ab” has no transition from its initial state on `b`; therefore it does not recognize every string containing `ab` (for example, `bab` is rejected).
 - The 100-character limit favors legible classroom diagrams over very large machines.
 - Possible extensions include user-selectable language rules, epsilon closure, exportable diagrams, and a separate target-string field.
+
+## Milestone 1 documentation
+
+- [Complete technical documentation](PROJECT_DOCUMENTATION.md) — verified architecture, algorithms, dependencies, API, features, and limitations.
+- [Milestone 1 report](MILESTONE_1_REPORT.md) — problem definition, existing-tool comparison, feasibility, methodology, and correctness example.
+- [Project architecture](PROJECT_ARCHITECTURE.md) — source modules and Mermaid workflow diagrams.
+- [Team work distribution](TEAM_WORK_DISTRIBUTION.md) — proposed responsibilities pending team confirmation; the available Git history cannot verify individual contributions.
+
+Installed dependency versions observed in the local virtual environment are recorded in the technical documentation. They are not pinned project-wide: `requirements.txt` specifies compatible version ranges.
